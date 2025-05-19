@@ -1,5 +1,5 @@
 {
-  "adb_path": "C:/Program Files/MuMuPlayer/shell/./adb.exe",
+  "adb_path": "模拟器adb目录",
   "device_id": "",
   "adb_port": 16384,
   "check_interval": 1,
@@ -29,62 +29,83 @@
         {
           "path": "1.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 1
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 1
         },
-		{
+        {
           "path": "2.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 2
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 2
         },
-		{
+        {
           "path": "save.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 1
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 1
         }
       ],
       "any": false,
-	  "loop_until_target": "3.png",
+      "loop_until_target": "3.png",
       "post_delay": 1
     },
-	{
+    {
       "description": "确定下一天",
       "targets": [
         {
           "path": "3.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 1
     },
-	{
+    {
       "description": "继续",
       "targets": [
         {
           "path": "4.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 1
     },
-	{
+    {
       "description": "确定继续",
       "targets": [
         {
           "path": "5.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         },
-		{
+        {
           "path": "tugihe.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": true,

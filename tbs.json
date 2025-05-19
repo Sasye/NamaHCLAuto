@@ -1,5 +1,5 @@
 {
-  "adb_path": "C:/Program Files/MuMuPlayer/shell/./adb.exe",
+  "adb_path": "模拟器adb目录",
   "device_id": "",
   "adb_port": 16384,
   "check_interval": 1,
@@ -27,52 +27,86 @@
     "threshold": 0.99,
     "target_loop": {
       "type": "times",
-	  "times": 1,
+      "times": 1,
       "steps": [
         {
-			"description": "返回",
-			"targets": [{"path": "backshop.png"}]
-		},
+          "description": "返回",
+          "targets": [
+            {
+              "path": "backshop.png"
+            }
+          ]
+        },
         {
-			"description": "制造",
-			"targets": [{"path": "make.png"}]
-		},
-		{
-			"description": "金床",
-			"targets": [{"path": "makegold.png"}]
-		},
-		{
-			"description": "铁做金",
-			"targets": [{"path": "iron.png"}]
-		},
-		{
-		  "description": "加99",
-		  "targets": [
-			{
-			  "path": "plusgold.png",
-			  "threshold": 0.6,
-			  "offset": [0, 0]
-			}
-		  ],
-		  "click_times": 99,
-		  "click_interval": 0.05,
-		  "any": false,
-		  "post_delay": 1
-		},
-		{
-			"description": "开始制造",
-			"targets": [{"path": "makeok.png"}]
-		},
-		{
-			"description": "完成制造",
-			"targets": [{"path": "shoptuzuku.png"}]
-		},
-		{
-			"description": "回到主界面",
-			"targets": [{"path": "makeback.png"}]
-		}
+          "description": "制造",
+          "targets": [
+            {
+              "path": "make.png"
+            }
+          ]
+        },
+        {
+          "description": "金床",
+          "targets": [
+            {
+              "path": "makegold.png"
+            }
+          ]
+        },
+        {
+          "description": "铁做金",
+          "targets": [
+            {
+              "path": "iron.png"
+            }
+          ]
+        },
+        {
+          "description": "加99",
+          "targets": [
+            {
+              "path": "plusgold.png",
+              "threshold": 0.6,
+              "offset": [
+                0,
+                0
+              ]
+            }
+          ],
+          "click_times": 99,
+          "click_interval": 0.05,
+          "any": false,
+          "post_delay": 1
+        },
+        {
+          "description": "开始制造",
+          "targets": [
+            {
+              "path": "makeok.png"
+            }
+          ]
+        },
+        {
+          "description": "完成制造",
+          "targets": [
+            {
+              "path": "shoptuzuku.png"
+            }
+          ]
+        },
+        {
+          "description": "回到主界面",
+          "targets": [
+            {
+              "path": "makeback.png"
+            }
+          ]
+        }
       ],
-      "exit_condition": {"target": "1.png", "threshold": 0.6}
+      "exit_condition": {
+        "target": "1.png",
+        "threshold": 0.6
+      }
     }
   },
   "steps": [
@@ -82,320 +116,413 @@
         {
           "path": "1.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 1
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 1
         },
-		{
+        {
           "path": "2.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 2
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 2
         },
-		{
+        {
           "path": "save.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 1
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 1
         }
       ],
       "any": false,
-	  "loop_until_target": "3.png",
+      "loop_until_target": "3.png",
       "post_delay": 0.5
     },
-	{
+    {
       "description": "确定下一天",
       "targets": [
         {
           "path": "3.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "继续",
       "targets": [
         {
           "path": "4.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "确定继续",
       "targets": [
         {
           "path": "5.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         },
-		{
+        {
           "path": "tugihe.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": true,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "下一天",
       "targets": [
         {
           "path": "1.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 1
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 1
         },
-		{
+        {
           "path": "2.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 2
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 2
         },
-		{
+        {
           "path": "save.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 1
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 1
         }
       ],
       "any": false,
-	  "loop_until_target": "3.png",
+      "loop_until_target": "3.png",
       "post_delay": 0.5
     },
-	{
+    {
       "description": "确定下一天",
       "targets": [
         {
           "path": "3.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "继续",
       "targets": [
         {
           "path": "4.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "确定继续",
       "targets": [
         {
           "path": "5.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         },
-		{
+        {
           "path": "tugihe.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": true,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "下一天",
       "targets": [
         {
           "path": "1.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 1
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 1
         },
-		{
+        {
           "path": "2.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 2
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 2
         },
-		{
+        {
           "path": "save.png",
           "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 1
+          "offset": [
+            0,
+            0
+          ],
+          "priority": 1
         }
       ],
       "any": false,
-	  "loop_until_target": "3.png",
+      "loop_until_target": "3.png",
       "post_delay": 0.5
     },
-	{
+    {
       "description": "确定下一天",
       "targets": [
         {
           "path": "3.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "继续",
       "targets": [
         {
           "path": "4.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "确定继续",
       "targets": [
         {
           "path": "5.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         },
-		{
+        {
           "path": "tugihe.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": true,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "进入商店",
       "targets": [
         {
           "path": "shop.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "买水",
       "targets": [
         {
           "path": "water.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "加50",
       "targets": [
         {
           "path": "plus.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
-	  "click_times": 50,
-	  "click_interval": 0.05,
+      "click_times": 50,
+      "click_interval": 0.05,
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "购买",
       "targets": [
         {
           "path": "buy.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "点击继续",
       "targets": [
         {
           "path": "shoptuzuku.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "买透泊石",
       "targets": [
         {
           "path": "tou.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "加10",
       "targets": [
         {
           "path": "plus.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
-	  "click_times": 10,
-	  "click_interval": 0.1,
+      "click_times": 10,
+      "click_interval": 0.1,
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "购买",
       "targets": [
         {
           "path": "buy.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "点击继续",
       "targets": [
         {
           "path": "shoptuzuku.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
       "post_delay": 0.5
     },
-	{
+    {
       "description": "返回界面",
       "targets": [
         {
           "path": "back.png",
           "threshold": 0.6,
-          "offset": [0, 0]
+          "offset": [
+            0,
+            0
+          ]
         }
       ],
       "any": false,
