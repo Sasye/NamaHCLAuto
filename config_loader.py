@@ -65,3 +65,24 @@ class ConfigLoader:
             config['loop']['exit_condition']['target'] = prepend_path(
                 config['loop']['exit_condition'].get('target')
             )
+            
+        # 全局监听子循环
+        if 'global_monitor' in config:
+            # 处理 trigger_image
+            trigger_image = config['global_monitor'].get('trigger_image')
+            if trigger_image:
+                config['global_monitor']['trigger_image'] = prepend_path(trigger_image)
+
+            # 处理子循环的步骤和退出条件
+            target_loop = config['global_monitor'].get('target_loop', {})
+            # 1. 处理步骤中的 targets
+            for step in target_loop.get('steps', []):
+                for target in step.get('targets', []):
+                    target['path'] = prepend_path(target.get('path'))
+                if 'loop_until_target' in step:
+                    step['loop_until_target'] = prepend_path(step.get('loop_until_target'))
+            # 2. 处理子循环的退出条件
+            if 'exit_condition' in target_loop:
+                exit_target = target_loop['exit_condition'].get('target')
+                if exit_target:
+                    target_loop['exit_condition']['target'] = prepend_path(exit_target)

@@ -22,6 +22,59 @@
       }
     }
   },
+  "global_monitor": {
+    "trigger_image": "nomoney.png",
+    "threshold": 0.99,
+    "target_loop": {
+      "type": "times",
+	  "times": 1,
+      "steps": [
+        {
+			"description": "返回",
+			"targets": [{"path": "backshop.png"}]
+		},
+        {
+			"description": "制造",
+			"targets": [{"path": "make.png"}]
+		},
+		{
+			"description": "金床",
+			"targets": [{"path": "makegold.png"}]
+		},
+		{
+			"description": "铁做金",
+			"targets": [{"path": "iron.png"}]
+		},
+		{
+		  "description": "加99",
+		  "targets": [
+			{
+			  "path": "plusgold.png",
+			  "threshold": 0.6,
+			  "offset": [0, 0]
+			}
+		  ],
+		  "click_times": 99,
+		  "click_interval": 0.1,
+		  "any": false,
+		  "post_delay": 1
+		},
+		{
+			"description": "开始制造",
+			"targets": [{"path": "makeok.png"}]
+		},
+		{
+			"description": "完成制造",
+			"targets": [{"path": "shoptuzuku.png"}]
+		},
+		{
+			"description": "回到主界面",
+			"targets": [{"path": "makeback.png"}]
+		}
+      ],
+      "exit_condition": {"target": "1.png", "threshold": 0.6}
+    }
+  },
   "steps": [
     {
       "description": "下一天",
@@ -89,7 +142,8 @@
       ],
       "any": true,
       "post_delay": 1
-    },{
+    },
+	{
       "description": "下一天",
       "targets": [
         {
@@ -155,73 +209,8 @@
       ],
       "any": true,
       "post_delay": 1
-    },{
-      "description": "下一天",
-      "targets": [
-        {
-          "path": "1.png",
-          "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 1
-        },
-		{
-          "path": "2.png",
-          "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 2
-        },
-		{
-          "path": "save.png",
-          "threshold": 0.6,
-          "offset": [0, 0],
-		  "priority": 1
-        }
-      ],
-      "any": false,
-	  "loop_until_target": "3.png",
-      "post_delay": 1
     },
 	{
-      "description": "确定下一天",
-      "targets": [
-        {
-          "path": "3.png",
-          "threshold": 0.6,
-          "offset": [0, 0]
-        }
-      ],
-      "any": false,
-      "post_delay": 1
-    },
-	{
-      "description": "继续",
-      "targets": [
-        {
-          "path": "4.png",
-          "threshold": 0.6,
-          "offset": [0, 0]
-        }
-      ],
-      "any": false,
-      "post_delay": 1
-    },
-	{
-      "description": "确定继续",
-      "targets": [
-        {
-          "path": "5.png",
-          "threshold": 0.6,
-          "offset": [0, 0]
-        },
-		{
-          "path": "tugihe.png",
-          "threshold": 0.6,
-          "offset": [0, 0]
-        }
-      ],
-      "any": true,
-      "post_delay": 1
-    },{
       "description": "下一天",
       "targets": [
         {
