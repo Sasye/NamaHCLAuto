@@ -1,4 +1,5 @@
 import os
+import sys
 from config_loader import ConfigLoader
 from adb_utils import AdbUtils
 from step_run import StepRunner
@@ -6,7 +7,7 @@ from exit_condition import ExitConditionChecker
 
 def main():
     try:
-        config_path = "config.json"
+        config_path = sys.argv[1] if len(sys.argv) > 1 else "config.json"
         config = ConfigLoader.load(config_path)
         ConfigLoader.validate(config)
 

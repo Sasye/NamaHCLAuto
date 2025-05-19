@@ -70,8 +70,14 @@ class StepRunner:
                     found_targets.sort(key=lambda x: x['priority'], reverse=True)
                     target_to_click = found_targets[0]
 
-                print(f"找到目标 [{target_to_click['name']}]，点击坐标 {target_to_click['pos']}，优先级 {target_to_click['priority']}")
-                self.adb_utils.tap_screen(*target_to_click['pos'])
+                click_times = step_config.get('click_times', 1)
+                click_interval = step_config.get('click_interval', 0)
+
+                print(f"找到目标 [{target_to_click['name']}]，点击 {click_times} 次，间隔 {click_interval} 秒")
+                for _ in range(click_times):
+                    self.adb_utils.tap_screen(*target_to_click['pos'])
+                    time.sleep(click_interval)
+
                 time.sleep(step_config.get('post_delay', 1))
                 if not loop_until_target:
                     return True
