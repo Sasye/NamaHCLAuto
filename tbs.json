@@ -18,7 +18,7 @@
       "trigger_image": "tuzuku.png",
       "threshold": 0.6,
       "step": {
-        "post_delay": 1
+        "post_delay": 0.5
       }
     }
   },
@@ -55,7 +55,7 @@
 			}
 		  ],
 		  "click_times": 99,
-		  "click_interval": 0.1,
+		  "click_interval": 0.05,
 		  "any": false,
 		  "post_delay": 1
 		},
@@ -100,7 +100,7 @@
       ],
       "any": false,
 	  "loop_until_target": "3.png",
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "确定下一天",
@@ -112,7 +112,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "继续",
@@ -124,7 +124,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "确定继续",
@@ -141,7 +141,7 @@
         }
       ],
       "any": true,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "下一天",
@@ -167,7 +167,7 @@
       ],
       "any": false,
 	  "loop_until_target": "3.png",
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "确定下一天",
@@ -179,7 +179,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "继续",
@@ -191,7 +191,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "确定继续",
@@ -208,7 +208,7 @@
         }
       ],
       "any": true,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "下一天",
@@ -234,7 +234,7 @@
       ],
       "any": false,
 	  "loop_until_target": "3.png",
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "确定下一天",
@@ -246,7 +246,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "继续",
@@ -258,7 +258,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "确定继续",
@@ -275,7 +275,7 @@
         }
       ],
       "any": true,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "进入商店",
@@ -287,7 +287,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "买水",
@@ -299,7 +299,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "加50",
@@ -311,9 +311,9 @@
         }
       ],
 	  "click_times": 50,
-	  "click_interval": 0.1,
+	  "click_interval": 0.05,
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "购买",
@@ -325,7 +325,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "点击继续",
@@ -337,7 +337,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "买透泊石",
@@ -349,7 +349,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "加10",
@@ -363,7 +363,7 @@
 	  "click_times": 10,
 	  "click_interval": 0.1,
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "购买",
@@ -375,7 +375,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "点击继续",
@@ -387,7 +387,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     },
 	{
       "description": "返回界面",
@@ -399,7 +399,7 @@
         }
       ],
       "any": false,
-      "post_delay": 1
+      "post_delay": 0.5
     }
   ]
 }

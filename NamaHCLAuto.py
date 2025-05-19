@@ -28,6 +28,8 @@ def main():
         config = ConfigLoader.load(config_path)
         ConfigLoader.validate(config)
 
+        ImageUtils.preload_templates(config)
+
         adb_port = config.get('adb_port', 16384)
         adb_utils = AdbUtils(config['adb_path'], device_id=config.get('device_id'))
         step_runner = StepRunner(config, adb_utils, check_interval=config.get('check_interval', 2))
