@@ -22,7 +22,12 @@ class AdbUtils:
                 cmd.extend(['-s', self.device_id])
             cmd.extend(['exec-out', 'screencap', '-p'])
 
-            proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+            proc = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            creationflags=subprocess.CREATE_NO_WINDOW
+            )
             screenshot_data, _ = proc.communicate()
 
             with open(filename, 'wb') as f:
@@ -38,5 +43,12 @@ class AdbUtils:
         if self.device_id:
             cmd.extend(['-s', self.device_id])
         cmd.extend(['shell', 'input', 'tap', str(x), str(y)])
-        subprocess.call(cmd)
+        
+        # 添加 creationflags 参数
+        subprocess.Popen(
+            cmd,
+            creationflags=subprocess.CREATE_NO_WINDOW,  # Windows隐藏窗口
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
         print(f"已点击坐标 ({x}, {y})")

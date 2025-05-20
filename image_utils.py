@@ -20,6 +20,12 @@ class ImageUtils:
             if 'trigger_image' in helper:
                 all_images.add(helper['trigger_image'])
         
+        #循环退出条件图像
+        if 'loop' in config and 'exit_condition' in config['loop']:
+            exit_target = config['loop']['exit_condition'].get('target')
+            if exit_target:
+                all_images.add(exit_target)
+        
         # 全局监听和子循环图像
         if 'global_monitor' in config:
             all_images.add(config['global_monitor']['trigger_image'])
