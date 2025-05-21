@@ -117,7 +117,7 @@ class AutomationCore:
 class AutomationUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("NamaHCLAuto v0.0.1")
+        self.root.title("NamaHCLAuto v0.0.2")
         self.running = False
         self.automation_core = None
         self.worker_thread = None
