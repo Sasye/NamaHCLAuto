@@ -1,5 +1,5 @@
 {
-  "adb_path": "模拟器adb目录",
+  "adb_path": "填写包含adb.exe的路径",
   "device_id": "",
   "adb_port": 16384,
   "check_interval": 1,
