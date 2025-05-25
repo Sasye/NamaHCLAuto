@@ -34,11 +34,11 @@ class ConsoleRedirector:
 
 # ---------------------------- 核心自动化逻辑 ----------------------------
 class AutomationCore:
-    def __init__(self, config_path, adb_path, adb_port):
+    def __init__(self, config_path, adb_path, adb_ip, adb_port):
         self.config = ConfigLoader.load(config_path)
         ConfigLoader.validate(self.config)
         self.adb_utils = AdbUtils(adb_path)
-        self.adb_utils.connect_emulator(adb_port)
+        self.adb_utils.connect_emulator(adb_ip, adb_port)
         ImageUtils.preload_templates(self.config)
         self.running = True
 
@@ -117,7 +117,7 @@ class AutomationCore:
 class AutomationUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("NamaHCLAuto v0.0.2")
+        self.root.title("NamaHCLAuto v0.0.3")
         self.running = False
         self.automation_core = None
         self.worker_thread = None
@@ -126,6 +126,7 @@ class AutomationUI:
         self.script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
         self.config_path = tk.StringVar()
         self.adb_path = tk.StringVar()
+        self.adb_ip = tk.StringVar(value="127.0.0.1")
         self.adb_port = tk.IntVar(value=16384)
 
         # 构建UI组件
@@ -159,8 +160,12 @@ class AutomationUI:
         entry_adb.grid(row=1, column=1, padx=5)
         ttk.Button(config_frame, text="选择ADB", command=self.select_adb).grid(row=1, column=2)
 
-        ttk.Label(config_frame, text="ADB端口:").grid(row=2, column=0, sticky="w", pady=5)
-        ttk.Entry(config_frame, textvariable=self.adb_port, width=10).grid(row=2, column=1, sticky="w")
+        ttk.Label(config_frame, text="ADB IP:").grid(row=2, column=0, sticky="w", pady=5)
+        entry_ip = ttk.Entry(config_frame, textvariable=self.adb_ip, width=20)
+        entry_ip.grid(row=2, column=1, sticky="w", padx=5)
+
+        ttk.Label(config_frame, text="ADB端口:").grid(row=3, column=0, sticky="w", pady=5)
+        ttk.Entry(config_frame, textvariable=self.adb_port, width=10).grid(row=3, column=1, sticky="w")
 
         control_frame = ttk.Frame(main_frame, padding=10)
         control_frame.grid(row=1, column=0, sticky="ew", pady=10)
@@ -193,6 +198,7 @@ class AutomationUI:
             with open(config_path, 'r', encoding='utf-8') as f:
                 config = json.load(f)
             self.adb_path.set(os.path.normpath(config.get('adb_path', '')))
+            self.adb_ip.set(config.get('adb_ip', '127.0.0.1'))
             self.adb_port.set(config.get('adb_port', 16384))
         except Exception as e:
             self.show_error(f"配置文件加载失败: {str(e)}")
@@ -242,6 +248,7 @@ class AutomationUI:
             with open(self.config_path.get(), 'r+', encoding='utf-8') as f:
                 config = json.load(f)
                 config['adb_path'] = self.adb_path.get()
+                config['adb_ip'] = self.adb_ip.get()
                 config['adb_port'] = self.adb_port.get()
                 f.seek(0)
                 json.dump(config, f, indent=2, ensure_ascii=False)
@@ -263,6 +270,7 @@ class AutomationUI:
         self.automation_core = AutomationCore(
             config_path=self.config_path.get(),
             adb_path=self.adb_path.get(),
+            adb_ip=self.adb_ip.get(),
             adb_port=self.adb_port.get()
         )
         self.automation_core.run()

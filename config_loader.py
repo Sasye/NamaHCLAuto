@@ -31,7 +31,7 @@ class ConfigLoader:
     @staticmethod
     def validate(config: Dict[str, Any]):
         """配置校验"""
-        required_fields = ['adb_path', 'steps']
+        required_fields = ['adb_path', 'steps', 'adb_ip']
         
         for field in required_fields:
             if field not in config:

@@ -6,13 +6,15 @@ class AdbUtils:
         self.adb_path = os.path.normpath(adb_path)
         self.device_id = device_id
 
-    def connect_emulator(self, port=None):
+    def connect_emulator(self, ip=None, port=None):
+        if ip is None:
+            ip = "127.0.0.1"
         if port is None:
             port = 16384
         cmd = [self.adb_path]
         if self.device_id:
             cmd.extend(['-s', self.device_id])
-        cmd.extend(['connect', f"127.0.0.1:{port}"])
+        cmd.extend(['connect', f"{ip}:{port}"])
         subprocess.call(cmd)
 
     def take_screenshot(self, filename='screen.png'):

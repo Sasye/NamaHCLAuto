@@ -1,6 +1,7 @@
 {
-  "adb_path": "填写包含adb.exe的路径",
+  "adb_path": "C:\\Program Files\\MuMuPlayer\\shell\\adb.exe",
   "device_id": "",
+  "adb_ip": "127.0.0.1",
   "adb_port": 16384,
   "check_interval": 1,
   "loop": {
