@@ -1,3 +1,5 @@
+[中文](README.md) | [English](README_EN.md)
+
 # NamaHCLAuto
 生稀盐酸自动跳过天数刷材料
 目前理论支持日服和国服
